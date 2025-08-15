@@ -1,0 +1,10 @@
+networkx
+geopandas
+pandas
+numpy
+scipy
+scikit-learn
+shapely
+pysal
+osmnx
+pyrosm
