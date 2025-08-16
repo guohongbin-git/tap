@@ -23,7 +23,10 @@
 
 ## 项目状态
 
-**注意**: 本项目目前处于早期的**开发阶段**。核心功能正在实现中，API和用法未来可能会发生变化。
+**注意**: 本项目目前处于**Alpha测试阶段**。核心后端功能和前端交互界面已基本完成。
+
+**最新进展 (2025年8月17日):**
+*   **前端增强完成**: 已根据设计文档`DDR_09`，全面增强了前端功能，包括实现了动态参数配置、空间统计分析、交互式结果报告和LLM聊天机器人。
 
 ## 安装指南 (Installation)
 
@@ -33,29 +36,56 @@
     cd TAP
     ```
 
-2.  **安装核心依赖**:
-    对于普通用户，仅需安装运行项目所需的核心依赖。
+2.  **安装后端依赖**:
     ```bash
     pip install -r requirements.txt
     ```
-    *(注意: `requirements.txt` 当前为空，将在后续开发中填充)*
 
 3.  **安装开发依赖 (针对贡献者)**:
     如果您希望对本项目进行贡献，请额外安装开发工具依赖。
     ```bash
     pip install -r requirements-dev.txt
     ```
-    更详细的开发环境设置，请参见[贡献指南](CONTRIBUTING.md)。
 
-## 使用方法 (Usage)
+## 运行后端服务 (Running the Backend Service)
 
-由于项目尚在开发中，当前没有可直接运行的稳定入口。未来的使用方式可能如下（概念示例）：
+(说明：此部分将在API开发完成后更新)
 
-```bash
-# 运行一个在配置文件中定义好的实验
-python run_experiment.py --config configs/experiment_01.yaml
-```
-该命令将根据`experiment_01.yaml`的设置，自动完成数据生成、算法执行、结果评估和日志记录的全过程。
+## 运行前端开发环境 (Running the Frontend Development Environment)
+
+前端应用是一个使用React和Vite构建的单页应用。您需要Node.js环境来运行它。
+
+1.  **进入前端目录**:
+    ```bash
+    cd frontend
+    ```
+
+2.  **安装前端依赖**:
+    如果您是第一次运行，或者依赖项有更新，请运行此命令。
+    ```bash
+    npm install
+    ```
+
+3.  **启动开发服务器**:
+    ```bash
+    npm run dev
+    ```
+    此命令会启动一个本地开发服务器（通常在 `http://localhost:5173`）。在浏览器中打开该地址，您就可以看到并与前端界面进行交互了。
+
+## 构建前端生产版本 (Building the Frontend for Production)
+
+当您准备好部署前端应用时，可以将其构建为生产优化版本。
+
+1.  **进入前端目录**:
+    ```bash
+    cd frontend
+    ```
+
+2.  **执行构建命令**:
+    ```bash
+    npm run build
+    ```
+    构建完成后，生产优化文件将生成在 `frontend/dist` 目录下。这些文件可以直接部署到任何静态文件服务器上。
 
 ## 文档 (Documentation)
 
